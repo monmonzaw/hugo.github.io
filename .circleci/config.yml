@@ -7,9 +7,6 @@ workflows:
       - build:
           requires:
             - convert
-          filters:
-            branches:
-              only: master
 
 jobs:
   convert:
