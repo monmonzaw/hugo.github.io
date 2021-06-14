@@ -33,7 +33,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "SHA256:yT6wNEG+TU6Tamrwr0m20qFdkJs6nZQWYW8prCEMOAM annexdev02monzaw@gmail.com"
+            - "SHA256:dj4KauGMGh6oYKUM3W9pmWlM6FWxsE0mwpq5dSEZMDg annexdev02monzaw@gmail.com"
       - checkout
       - run:
           command: |
