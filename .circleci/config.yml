@@ -1,0 +1,54 @@
+version: 2.1
+
+workflows:
+  main:
+    jobs:
+      - convert
+      - build:
+          requires:
+            - convert
+          filters:
+            branches:
+              only: master
+
+jobs:
+  convert:
+    working_directory: ~/quickstart
+    docker:
+      - image: circleci/python:3.7.6
+    steps:
+      - checkout
+      - run: 
+          name: Install packages
+          command: |
+            git submodule sync
+            git submodule update --init --recursive 
+            pip install jupyter
+            pip install nb2hugo
+            touch logs.txt
+            python convert-to-md.py -d
+      - persist_to_workspace:
+          root: .
+          paths: content
+  build:
+    docker:
+      - image: cibuilds/hugo:latest
+    steps:
+      - checkout
+      - run:
+          command: |
+            hugo
+            git config user.name ${GIT_USER_NAME}
+            git config user.email ${GIT_USER_EMAIL}
+            git clone https://github.com/monmonzaw/hugo.github.io.git
+            ls
+            cp -rp public/* hugo.github.io/
+            cd hugo.github.io
+            ls
+            git remote set-url origin git@github.com:monmonzaw/hugo.github.io.git
+            git add .
+            git commit -m "[ci skip] publish"
+            git push origin master
+      - persist_to_workspace:
+          root: .
+          paths: public
