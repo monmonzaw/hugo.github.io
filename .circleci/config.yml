@@ -31,6 +31,9 @@ jobs:
     docker:
       - image: cibuilds/hugo:latest
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "SHA256:yT6wNEG+TU6Tamrwr0m20qFdkJs6nZQWYW8prCEMOAM annexdev02monzaw@gmail.com"
       - checkout
       - run:
           command: |
