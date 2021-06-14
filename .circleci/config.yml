@@ -28,6 +28,7 @@ jobs:
           root: .
           paths: content
   build:
+    working_directory: ~/hugo
     docker:
       - image: cibuilds/hugo:latest
     steps:
@@ -47,7 +48,7 @@ jobs:
             ls
             git remote set-url origin git@github.com:monmonzaw/hugo.github.io.git
             git add .
-            git commit -m "[ci skip] publish"
+            git commit -m "publish"
             git push origin master
       - persist_to_workspace:
           root: .
