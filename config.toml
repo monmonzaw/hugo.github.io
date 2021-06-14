@@ -37,3 +37,4 @@ theme = "hugo-theme-learn"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+theme = "hugo-theme-learn"
