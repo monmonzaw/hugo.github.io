@@ -35,8 +35,8 @@ jobs:
       - run:
           command: |
             hugo
-            git config user.name ${GIT_USER_NAME}
-            git config user.email ${GIT_USER_EMAIL}
+            git config --global user.name ${GIT_USER_NAME}
+            git config --global user.email ${GIT_USER_EMAIL}
             git clone https://github.com/monmonzaw/hugo.github.io.git
             ls
             cp -rp public/* hugo.github.io/
