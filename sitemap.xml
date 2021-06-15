@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/analyze/</loc>
+    <loc>https://hugo.github.io/analyze/</loc>
   </url><url>
-    <loc>http://example.org/</loc>
+    <loc>https://hugo.github.io/</loc>
     <lastmod>2018-08-08T17:06:24+09:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/</loc>
+    <loc>https://hugo.github.io/posts/</loc>
     <lastmod>2018-08-08T17:06:24+09:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/my-first-post/</loc>
+    <loc>https://hugo.github.io/posts/my-first-post/</loc>
     <lastmod>2018-08-08T17:06:24+09:00</lastmod>
   </url><url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://hugo.github.io/categories/</loc>
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://hugo.github.io/tags/</loc>
   </url>
 </urlset>
