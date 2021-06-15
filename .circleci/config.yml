@@ -28,7 +28,6 @@ jobs:
           root: .
           paths: content
   build:
-    working_directory: ~/hugo
     docker:
       - image: cibuilds/hugo:latest
     steps:
